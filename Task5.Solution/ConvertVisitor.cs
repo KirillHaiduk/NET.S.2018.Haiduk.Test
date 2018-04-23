@@ -8,28 +8,21 @@ namespace Task5.Solution
 {
     class ConvertVisitor : DocumentPartVisitor
     {
-        private ITextConverter converter;
-
-        public ConvertVisitor(ITextConverter textConverter)
-        {
-            converter = textConverter;
-        }
-
         public string ConvertedString { get; private set; }
 
         protected override void Visit(BoldText boldText)
         {
-            ConvertedString = converter.Convert(boldText);
+            ConvertedString = boldText.Text;
         }
 
         protected override void Visit(Hyperlink hyperlink)
         {
-            ConvertedString = converter.Convert(hyperlink);
+            ConvertedString = hyperlink.Url + hyperlink.Text;
         }
 
         protected override void Visit(PlainText plainText)
         {
-            ConvertedString = converter.Convert(plainText);
+            ConvertedString = plainText.Text;
         }
     }
 }
