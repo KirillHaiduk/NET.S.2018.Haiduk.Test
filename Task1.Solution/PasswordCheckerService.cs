@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace Task1.Solution
 {
@@ -8,6 +7,12 @@ namespace Task1.Solution
         private IRepository repository;
 
         private PasswordValidation passwordValidation;
+        
+        public PasswordCheckerService(IRepository repository, PasswordValidation passwordValidation)
+        {
+            this.repository = repository;
+            this.passwordValidation = passwordValidation;
+        }
 
         public Tuple<bool, string> VerifyPassword(string password)
         {
