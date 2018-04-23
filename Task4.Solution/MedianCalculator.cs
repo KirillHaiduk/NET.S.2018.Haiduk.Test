@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task4.Solution
 {
-    class MedianCalculator : ICalculator
+    public class MedianCalculator : ICalculator
     {
         public double CalculateAverage(IEnumerable<double> values)
         {
