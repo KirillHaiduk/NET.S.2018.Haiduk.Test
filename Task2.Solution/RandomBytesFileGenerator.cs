@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using Task2.Solution;
 
 namespace Task_2.Solution
@@ -8,9 +7,7 @@ namespace Task_2.Solution
     {
         public override string WorkingDirectory => "Files with random bytes";
 
-        public override string FileExtension => ".bytes";
-
-        
+        public override string FileExtension => ".bytes";        
 
         protected override byte[] GenerateFileContent(int contentLength)
         {
